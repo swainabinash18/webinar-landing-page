@@ -10,6 +10,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrollbar from animations */
         }
         .hero-gradient {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -31,6 +32,18 @@
         .faq-item summary::-webkit-details-marker {
             display: none;
         }
+        
+        /* Animation styles */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -46,43 +59,49 @@
     <!-- Hero Section -->
     <main class="container mx-auto px-6">
         <section class="text-center py-16 md:py-24">
-            <h2 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4 leading-tight">Unlock Your Full Potential</h2>
-            <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Join our exclusive webinar for expert study strategies, career clarity, and the motivation you need to succeed.</p>
-            <a href="#register" class="cta-button inline-block bg-green-500 text-white font-bold text-lg py-4 px-8 rounded-full shadow-lg hover:bg-green-600">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4 leading-tight scroll-animate">Unlock Your Full Potential</h2>
+            <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto scroll-animate" style="transition-delay: 100ms;">Join our exclusive webinar for expert study strategies, career clarity, and the motivation you need to succeed.</p>
+            <a href="#register" class="cta-button inline-block bg-green-500 text-white font-bold text-lg py-4 px-8 rounded-full shadow-lg hover:bg-green-600 scroll-animate" style="transition-delay: 200ms;">
                 Register for FREE
             </a>
+        </section>
+        
+        <!-- Animated Counter Section -->
+        <section class="text-center py-12 bg-indigo-50 rounded-2xl mb-16 scroll-animate">
+            <div class="container mx-auto px-6">
+                <h3 class="text-2xl font-bold text-gray-800">Join Thousands of Students!</h3>
+                <p class="text-gray-600 mb-4">Already making their dreams a reality.</p>
+                <div class="text-5xl font-extrabold text-indigo-600" id="studentCounter" data-target="12500">0</div>
+            </div>
         </section>
 
         <!-- Features Section -->
         <section id="features" class="py-16">
-            <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-12">What You Will Learn</h3>
+            <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-12 scroll-animate">What You Will Learn</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Feature Card 1 -->
-                <div class="feature-card bg-white p-6 rounded-xl shadow-md text-center">
+                <!-- Feature Cards will be animated individually by JS -->
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md text-center scroll-animate">
                     <div class="bg-indigo-100 text-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-clock fa-2x"></i>
                     </div>
                     <h4 class="text-lg font-semibold text-gray-800 mb-2">Time Management</h4>
                     <p class="text-gray-600 text-sm">Master your schedule and boost productivity.</p>
                 </div>
-                <!-- Feature Card 2 -->
-                <div class="feature-card bg-white p-6 rounded-xl shadow-md text-center">
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md text-center scroll-animate" style="transition-delay: 100ms;">
                     <div class="bg-green-100 text-green-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-tasks fa-2x"></i>
                     </div>
                     <h4 class="text-lg font-semibold text-gray-800 mb-2">Mock Solving Methods</h4>
                     <p class="text-gray-600 text-sm">Learn effective strategies to ace your tests.</p>
                 </div>
-                <!-- Feature Card 3 -->
-                <div class="feature-card bg-white p-6 rounded-xl shadow-md text-center">
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md text-center scroll-animate" style="transition-delay: 200ms;">
                      <div class="bg-yellow-100 text-yellow-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-lightbulb fa-2x"></i>
                     </div>
                     <h4 class="text-lg font-semibold text-gray-800 mb-2">Smart Study Habits</h4>
                     <p class="text-gray-600 text-sm">Study smarter, not harder, for better results.</p>
                 </div>
-                <!-- Feature Card 4 -->
-                <div class="feature-card bg-white p-6 rounded-xl shadow-md text-center">
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md text-center scroll-animate" style="transition-delay: 300ms;">
                     <div class="bg-red-100 text-red-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-bullseye fa-2x"></i>
                     </div>
@@ -93,7 +112,7 @@
         </section>
 
         <!-- Exciting Elements Section -->
-        <section class="py-16 bg-indigo-50 rounded-2xl">
+        <section class="py-16 bg-indigo-50 rounded-2xl scroll-animate">
              <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-12">Why This Webinar is Different</h3>
              <div class="flex flex-wrap justify-center gap-8 text-center">
                  <div class="flex items-center flex-col p-4">
@@ -117,7 +136,7 @@
 
         <!-- Registration Section -->
         <section id="register" class="py-16">
-            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-lg mx-auto">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-lg mx-auto scroll-animate">
                 <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">Register Now - It's Free!</h3>
                 <p class="text-center text-gray-600 mb-8">Join with just your name and number to get the Zoom link via SMS & WhatsApp.</p>
                 <form id="registrationForm">
@@ -139,30 +158,30 @@
 
         <!-- FAQ Section -->
         <section id="faq" class="py-16">
-            <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-12">Frequently Asked Questions</h3>
+            <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-12 scroll-animate">Frequently Asked Questions</h3>
             <div class="max-w-2xl mx-auto space-y-4">
-                <details class="faq-item bg-white p-4 rounded-lg shadow-sm cursor-pointer">
+                <details class="faq-item bg-white p-4 rounded-lg shadow-sm cursor-pointer scroll-animate">
                     <summary class="font-semibold text-gray-800 flex justify-between items-center">
                         Is this webinar only for PWNSAT students?
                         <i class="fas fa-chevron-down transition-transform duration-300"></i>
                     </summary>
                     <p class="text-gray-600 mt-2">No, it’s open to all students from Class 5 to 12—whether or not you’ve registered for PWNSAT.</p>
                 </details>
-                <details class="faq-item bg-white p-4 rounded-lg shadow-sm cursor-pointer">
+                <details class="faq-item bg-white p-4 rounded-lg shadow-sm cursor-pointer scroll-animate" style="transition-delay: 100ms;">
                     <summary class="font-semibold text-gray-800 flex justify-between items-center">
                         How much does PWNSAT registration cost?
                         <i class="fas fa-chevron-down transition-transform duration-300"></i>
                     </summary>
                     <p class="text-gray-600 mt-2">PWNSAT registration is completely free for all eligible students.</p>
                 </details>
-                 <details class="faq-item bg-white p-4 rounded-lg shadow-sm cursor-pointer">
+                 <details class="faq-item bg-white p-4 rounded-lg shadow-sm cursor-pointer scroll-animate" style="transition-delay: 200ms;">
                     <summary class="font-semibold text-gray-800 flex justify-between items-center">
                         What is PWNSAT?
                         <i class="fas fa-chevron-down transition-transform duration-300"></i>
                     </summary>
                     <p class="text-gray-600 mt-2">PWNSAT (Physics Wallah National Scholarship cum Admission Test) is for students in classes 6-12 and JEE/NEET droppers. It offers up to 100% scholarships on PW courses.</p>
                 </details>
-                <details class="faq-item bg-white p-4 rounded-lg shadow-sm cursor-pointer">
+                <details class="faq-item bg-white p-4 rounded-lg shadow-sm cursor-pointer scroll-animate" style="transition-delay: 300ms;">
                     <summary class="font-semibold text-gray-800 flex justify-between items-center">
                         How do I join the webinar?
                         <i class="fas fa-chevron-down transition-transform duration-300"></i>
@@ -173,7 +192,7 @@
         </section>
 
         <!-- Stay Connected Section -->
-        <section class="text-center py-16">
+        <section class="text-center py-16 scroll-animate">
             <h3 class="text-2xl font-bold text-gray-800 mb-4">Stay Connected!</h3>
             <p class="text-gray-600 mb-8">Join our channels for regular study tips, reminders, and bonus content.</p>
             <div class="flex justify-center gap-4">
@@ -193,44 +212,90 @@
     </footer>
 
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Smooth scrolling for anchor links ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
-        });
 
-        // FAQ accordion icon rotation
-        const details = document.querySelectorAll('.faq-item');
-        details.forEach((item) => {
-            item.addEventListener('toggle', (event) => {
-                const icon = item.querySelector('i');
-                if (item.open) {
-                    icon.classList.add('rotate-180');
+            // --- FAQ accordion icon rotation ---
+            const details = document.querySelectorAll('.faq-item');
+            details.forEach((item) => {
+                item.addEventListener('toggle', (event) => {
+                    const icon = item.querySelector('i');
+                    if (item.open) {
+                        icon.classList.add('rotate-180');
+                    } else {
+                        icon.classList.remove('rotate-180');
+                    }
+                });
+            });
+
+            // --- Handle form submission ---
+            const form = document.getElementById('registrationForm');
+            const formMessage = document.getElementById('formMessage');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+
+                if (name && phone.match(/^[0-9]{10}$/)) {
+                    formMessage.innerHTML = `<p class="text-green-600 font-semibold">Thank you, ${name}! Your spot is confirmed. We'll send the link to ${phone}.</p>`;
+                    form.reset();
                 } else {
-                    icon.classList.remove('rotate-180');
+                     formMessage.innerHTML = `<p class="text-red-600 font-semibold">Please fill out all fields correctly.</p>`;
                 }
             });
-        });
 
-        // Handle form submission
-        const form = document.getElementById('registrationForm');
-        const formMessage = document.getElementById('formMessage');
+            // --- Scroll-triggered animations ---
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
+            scrollElements.forEach(el => {
+                observer.observe(el);
+            });
 
-            // Basic validation check
-            if (name && phone) {
-                formMessage.innerHTML = `<p class="text-green-600 font-semibold">Thank you, ${name}! Your spot is confirmed. We'll send the link to ${phone}.</p>`;
-                form.reset();
-            } else {
-                 formMessage.innerHTML = `<p class="text-red-600 font-semibold">Please fill out all fields correctly.</p>`;
+            // --- Animated Counter ---
+            const counter = document.getElementById('studentCounter');
+            const target = +counter.getAttribute('data-target');
+            const duration = 2000; // 2 seconds
+
+            const countUp = (timestamp) => {
+                if (!startTime) startTime = timestamp;
+                const progress = timestamp - startTime;
+                const current = Math.min(Math.floor(progress / duration * target), target);
+                counter.innerText = current.toLocaleString(); // Add commas to number
+                if (current < target) {
+                    requestAnimationFrame(countUp);
+                }
+            };
+
+            let startTime;
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Start animation only once
+                        requestAnimationFrame(countUp);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            if (counter) {
+                counterObserver.observe(counter);
             }
         });
     </script>
