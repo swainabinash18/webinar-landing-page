@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Your Future: Career Webinar for Students</title>
+    <!-- Inter Font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar-hide utility for the testimonial section */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden">
+        <div class="bg-purple-900 text-white py-16 md:py-24 relative z-10">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl flex flex-col lg:flex-row items-center justify-between">
+                <!-- Hero Content -->
+                <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tighter">
+                        Unlock Your Future: <br class="hidden sm:inline" /> Master Your Career Path
+                    </h1>
+                    <p class="mt-4 md:mt-6 text-lg md:text-xl text-purple-200 font-medium">
+                        Join our free webinar to gain expert study strategies, career clarity, and motivation to ace your exams and life.
+                    </p>
+                    <div class="mt-8 flex justify-center lg:justify-start">
+                        <a href="#registration-form-card" class="inline-block px-8 py-4 bg-yellow-400 text-purple-900 font-extrabold text-lg rounded-full shadow-lg transition-transform transform hover:scale-105 hover:bg-yellow-300">
+                            Register Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Registration Form Card -->
+                <div id="registration-form-card" class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center transition-all duration-500 ease-in-out">
+                    <div class="w-full max-w-md bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-200" id="form-container">
+                        <h2 class="text-2xl font-bold text-center text-purple-900 mb-6">
+                            Secure Your Spot Now!
+                        </h2>
+                        <form id="registrationForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="sr-only">Name</label>
+                                <input type="text" name="name" id="name" placeholder="Your Full Name" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors">
+                            </div>
+                            <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" name="email" id="email" placeholder="Your Email Address" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors">
+                            </div>
+                            <div>
+                                <label for="phone" class="sr-only">Phone Number</label>
+                                <input type="tel" name="phone" id="phone" placeholder="Your Phone Number" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors">
+                            </div>
+                            <div class="text-center pt-2">
+                                <button type="submit" id="submitButton"
+                                    class="w-full px-8 py-4 bg-purple-600 text-white font-bold text-lg rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-300">
+                                    Register Now
+                                </button>
+                                <p class="mt-4 text-sm text-gray-500">
+                                    You'll receive a Zoom link via SMS/WhatsApp.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Thank You Message -->
+                    <div id="thank-you-message" class="hidden w-full max-w-md bg-white p-8 rounded-2xl shadow-xl border border-gray-200 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-green-500 mx-auto animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h2 class="text-3xl font-extrabold text-purple-900 mt-6">
+                            Congratulations!
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-700">
+                            You are successfully registered for the webinar. We can't wait to see you there!
+                        </p>
+                        <p class="mt-2 text-sm text-gray-500">
+                            Check your SMS/WhatsApp for the meeting link.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Background Gradient for Hero -->
+        <div class="absolute inset-0 z-0 opacity-20">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                        <stop offset="0%" style="stop-color:rgb(124, 58, 237);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:rgb(79, 70, 229);stop-opacity:0" />
+                    </radialGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grad1)" />
+            </svg>
+        </div>
+    </header>
+
+    <main>
+        <!-- Glimpses Section -->
+        <section class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-purple-900 mb-12">
+                    A Glimpse into Our Events
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Glimpse Card 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                        <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Expert+Panel" alt="Expert panel discussion" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Expert Panel Discussions</h3>
+                            <p class="mt-2 text-gray-600 text-sm">Gain insights from industry leaders and academic experts in a dynamic Q&A session.</p>
+                        </div>
+                    </div>
+                    <!-- Glimpse Card 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                        <img src="https://placehold.co/600x400/4f46e5/ffffff?text=Gamified+Rewards" alt="Students receiving gamified rewards" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Gamified Learning & Rewards</h3>
+                            <p class="mt-2 text-gray-600 text-sm">Learn in a fun and interactive way with exciting games and special rewards.</p>
+                        </div>
+                    </div>
+                    <!-- Glimpse Card 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                        <img src="https://placehold.co/600x400/1e293b/ffffff?text=Success+Stories" alt="Students sharing success stories" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Inspiring Success Stories</h3>
+                            <p class="mt-2 text-gray-600 text-sm">Hear directly from students who have achieved their goals and learn from their journey.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Attend Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-purple-900 mb-12">
+                    Why You Should Attend
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Benefit Card 1 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md transition-transform transform hover:scale-105">
+                        <div class="flex items-center justify-center w-12 h-12 bg-purple-100 text-purple-600 rounded-full mb-4">
+                            <!-- SVG for Strategies -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Expert Study Strategies</h3>
+                        <p class="mt-2 text-gray-600 text-sm">Master time management, mock-solving methods, and smart study habits with guidance from experts.</p>
+                    </div>
+                    <!-- Benefit Card 2 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md transition-transform transform hover:scale-105">
+                        <div class="flex items-center justify-center w-12 h-12 bg-purple-100 text-purple-600 rounded-full mb-4">
+                            <!-- SVG for Career Clarity -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.485 9.176 5 7.5 5S4.168 5.485 3 6.253v13C4.168 18.485 5.824 18 7.5 18s3.332.485 4.5 1.253m0-13C13.168 5.485 14.824 5 16.5 5s3.332.485 4.5 1.253v13C19.832 18.485 18.176 18 16.5 18s-3.332.485-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Career Clarity & Motivation</h3>
+                        <p class="mt-2 text-gray-600 text-sm">Gain clarity on your future path and find the motivation you need to achieve your goals.</p>
+                    </div>
+                    <!-- Benefit Card 3 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md transition-transform transform hover:scale-105">
+                        <div class="flex items-center justify-center w-12 h-12 bg-purple-100 text-purple-600 rounded-full mb-4">
+                            <!-- SVG for Goals -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.01 12.01 0 003 12c0 2.514.808 4.819 2.182 6.772a11.95 11.95 0 008.618 3.041c2.584-.047 5.006-.826 7.07-2.226A11.95 11.95 0 0021 12a12.01 12.01 0 00-2.382-7.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Fun & Interactive Sessions</h3>
+                        <p class="mt-2 text-gray-600 text-sm">Participate in gamified rewards, expert panels, and interactive sessions to keep it fun and inspiring.</p>
+                    </div>
+                    <!-- Benefit Card 4 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md transition-transform transform hover:scale-105">
+                        <div class="flex items-center justify-center w-12 h-12 bg-purple-100 text-purple-600 rounded-full mb-4">
+                            <!-- SVG for Certificate -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Certificate of Attendance</h3>
+                        <p class="mt-2 text-gray-600 text-sm">Receive a certificate to recognize your commitment to personal and academic growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gemini API Study Tip Generator Section -->
+        <section class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-4 md:px-8 max-w-4xl text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-purple-900 mb-6">
+                    Need a Boost?
+                </h2>
+                <p class="text-xl text-gray-700 mb-8">
+                    Get a personalized ✨study tip✨ powered by AI!
+                </p>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-200">
+                    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                        <input type="text" id="gradeInput" placeholder="e.g., Class 10"
+                               class="w-full sm:w-1/2 px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors">
+                        <button id="generateTipButton"
+                                class="w-full sm:w-auto px-8 py-3 bg-purple-600 text-white font-bold rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-300">
+                                Get Your ✨Study Tip✨
+                        </button>
+                    </div>
+                    <div id="tipResult" class="mt-8 p-6 bg-purple-50 rounded-xl border border-purple-200 text-left hidden">
+                        <!-- Study tip will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-purple-900 mb-12">
+                    What Our Students Say
+                </h2>
+                <div class="flex space-x-6 overflow-x-auto pb-6 scrollbar-hide">
+                    <!-- Testimonial Card 1 -->
+                    <div class="flex-shrink-0 w-80 md:w-96 bg-white rounded-2xl p-6 shadow-md border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full mr-4" src="https://placehold.co/100x100/e5e7eb/6b7280" alt="Student 1">
+                            <div>
+                                <p class="font-bold text-gray-900">Ananya Sharma</p>
+                                <p class="text-sm text-gray-500">Class 12 Student</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-base italic">
+                            "The strategies I learned here changed how I approach my studies. I feel so much more confident about my future now."
+                        </p>
+                    </div>
+                    <!-- Testimonial Card 2 -->
+                    <div class="flex-shrink-0 w-80 md:w-96 bg-white rounded-2xl p-6 shadow-md border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full mr-4" src="https://placehold.co/100x100/e5e7eb/6b7280" alt="Student 2">
+                            <div>
+                                <p class="font-bold text-gray-900">Rahul Kumar</p>
+                                <p class="text-sm text-gray-500">JEE Aspirant</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-base italic">
+                            "The session on mock solving methods was a game-changer. I saw a significant improvement in my scores almost immediately."
+                        </p>
+                    </div>
+                    <!-- Testimonial Card 3 -->
+                    <div class="flex-shrink-0 w-80 md:w-96 bg-white rounded-2xl p-6 shadow-md border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full mr-4" src="https://placehold.co/100x100/e5e7eb/6b7280" alt="Student 3">
+                            <div>
+                                <p class="font-bold text-gray-900">Priya Singh</p>
+                                <p class="text-sm text-gray-500">Class 10 Student</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-base italic">
+                            "The gamified rewards made learning so much fun! I loved the interactive sessions and the expert insights."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-purple-900 mb-12">
+                    Frequently Asked Questions
+                </h2>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <details class="bg-white rounded-xl shadow-md border border-gray-200 group">
+                        <summary class="flex justify-between items-center px-6 py-4 cursor-pointer text-lg font-semibold text-purple-800">
+                            Is this webinar only for PWNSAT students?
+                            <span class="transform transition-transform duration-200 group-open:rotate-180">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="px-6 pb-4 pt-2 text-gray-600 border-t border-gray-200">
+                            <p>No, it's open to all students from Class 5 to 12—whether or not you’ve registered for PWNSAT.</p>
+                        </div>
+                    </details>
+                    <!-- FAQ Item 2 -->
+                    <details class="bg-white rounded-xl shadow-md border border-gray-200 group">
+                        <summary class="flex justify-between items-center px-6 py-4 cursor-pointer text-lg font-semibold text-purple-800">
+                            How do I join the webinar?
+                            <span class="transform transition-transform duration-200 group-open:rotate-180">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="px-6 pb-4 pt-2 text-gray-600 border-t border-gray-200">
+                            <p>It’s super easy! Just register with your name and number on this page, and you’ll receive a Zoom link via SMS and WhatsApp before the session. One click and you’re in—no extra app needed if you're on mobile or desktop.</p>
+                        </div>
+                    </details>
+                    <!-- FAQ Item 3 -->
+                    <details class="bg-white rounded-xl shadow-md border border-gray-200 group">
+                        <summary class="flex justify-between items-center px-6 py-4 cursor-pointer text-lg font-semibold text-purple-800">
+                            What is PWNSAT and who can apply?
+                            <span class="transform transition-transform duration-200 group-open:rotate-180">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="px-6 pb-4 pt-2 text-gray-600 border-t border-gray-200">
+                            <p>PWNSAT (Physics Wallah National Scholarship cum Admission Test) is for students in classes 6-12 and JEE/NEET droppers. It offers up to 100% scholarships on PW courses.</p>
+                        </div>
+                    </details>
+                    <!-- FAQ Item 4 -->
+                    <details class="bg-white rounded-xl shadow-md border border-gray-200 group">
+                        <summary class="flex justify-between items-center px-6 py-4 cursor-pointer text-lg font-semibold text-purple-800">
+                            How do I stay connected after the webinar?
+                            <span class="transform transition-transform duration-200 group-open:rotate-180">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="px-6 pb-4 pt-2 text-gray-600 border-t border-gray-200">
+                            <p>You can join our Telegram or WhatsApp channels for regular study tips, reminders, and bonus content.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl text-center">
+            <p>&copy; 2025 Webinar for Students. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Get references to the form and the thank you message
+        const registrationForm = document.getElementById('registrationForm');
+        const formContainer = document.getElementById('form-container');
+        const thankYouMessage = document.getElementById('thank-you-message');
+        const submitButton = document.getElementById('submitButton');
+        const generateTipButton = document.getElementById('generateTipButton');
+        const gradeInput = document.getElementById('gradeInput');
+        const tipResult = document.getElementById('tipResult');
+
+        // Add a submit event listener to the form
+        registrationForm.addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Simulate form submission process
+            submitButton.innerHTML = 'Submitting...';
+            submitButton.disabled = true;
+            submitButton.classList.add('opacity-50', 'cursor-not-allowed');
+
+            // For this example, we'll use a setTimeout to simulate a server response delay
+            setTimeout(() => {
+                // Hide the form with a transition
+                formContainer.style.transform = 'scale(0.9)';
+                formContainer.style.opacity = '0';
+
+                setTimeout(() => {
+                    formContainer.classList.add('hidden');
+                    thankYouMessage.classList.remove('hidden');
+                    thankYouMessage.style.opacity = '0';
+                    thankYouMessage.style.transform = 'scale(0.9)';
+                    
+                    // Animate the thank you message in
+                    setTimeout(() => {
+                        thankYouMessage.style.transform = 'scale(1)';
+                        thankYouMessage.style.opacity = '1';
+                    }, 50);
+                }, 500); // Wait for the form fade-out to complete
+            }, 1000); // Simulate a 1-second delay for submission
+        });
+
+        // Add event listener for the AI Study Tip button
+        generateTipButton.addEventListener('click', async () => {
+            const gradeLevel = gradeInput.value.trim();
+            if (!gradeLevel) {
+                tipResult.innerHTML = '<p class="text-red-500">Please enter your grade level (e.g., Class 10) to get a tip!</p>';
+                tipResult.classList.remove('hidden');
+                return;
+            }
+
+            // Show loading state
+            generateTipButton.innerHTML = 'Generating...';
+            generateTipButton.disabled = true;
+            tipResult.classList.remove('hidden');
+            tipResult.innerHTML = '<p class="text-gray-600">Thinking of a great tip for you...</p>';
+
+            // Prompt for the LLM
+            const prompt = `Generate a motivational and actionable study tip for a student in ${gradeLevel}. The tip should be concise and easy to understand. Do not include any greetings or salutations.`;
+
+            try {
+                // Prepare the payload for the Gemini API call
+                const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiKey = "" // Canvas will automatically provide an API key here
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                // Fetch data from the Gemini API
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                // Check if the response is successful
+                if (!response.ok) {
+                    throw new Error(`API error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                // Extract the generated text from the response
+                let generatedText = "Sorry, I couldn't generate a tip right now. Please try again.";
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    generatedText = result.candidates[0].content.parts[0].text;
+                }
+
+                // Display the generated tip
+                tipResult.innerHTML = `<p class="font-bold text-purple-900 mb-2">Here is your personalized study tip:</p><p class="text-gray-700">${generatedText}</p>`;
+            } catch (error) {
+                // Handle any errors during the API call
+                console.error('API call failed:', error);
+                tipResult.innerHTML = `<p class="text-red-500">An error occurred. Please try again later.</p>`;
+            } finally {
+                // Reset the button state
+                generateTipButton.innerHTML = 'Get Your ✨Study Tip✨';
+                generateTipButton.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
